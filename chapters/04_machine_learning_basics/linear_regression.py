@@ -35,7 +35,7 @@ def evaluate(sess, X, Y):
 # Launch the graph in a session, setup boilerplate
 with tf.Session() as sess:
 
-    tf.initialize_all_variables().run()
+    tf.global_variables_initializer().run()
 
     X, Y = inputs()
 
@@ -49,7 +49,7 @@ with tf.Session() as sess:
     training_steps = 1000
     for step in range(training_steps):
         sess.run([train_op])
-        if step % 10 == 0:
+        if step % 100 == 0:
             print "loss: ", sess.run([total_loss])
 
     evaluate(sess, X, Y)
