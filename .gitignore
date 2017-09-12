@@ -10,6 +10,8 @@
 *.hprof
 .vertx
 
+output
+
 # Log file
 *.log
 
